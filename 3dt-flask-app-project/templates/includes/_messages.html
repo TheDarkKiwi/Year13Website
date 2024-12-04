@@ -1,0 +1,23 @@
+<!-- This receives the flash messages from Flask. -->
+{% with messages = get_flashed_messages(with_categories=true) %}
+
+    <!-- If a messages exists, present them using the appropriate bootstrap category. -->
+    <!-- Categories: success (green), info (blue), warning (yellow), danger (red) -->
+    {% if messages %}
+        {% for category, message in messages %}
+            <div class="alert alert-{{category}}">{{ message }}</div>
+        {% endfor %}
+    {% endif %}
+
+    <!-- This allows us a different way to present errors when flash isn't available. -->
+    {% if error %}
+        <div class="alert alert-danger">{{error}}</div>
+    {% endif %}
+
+    <!-- This allows us a different way to present messages when flash isn't available. -->
+    {% if msg %}
+        <div class="alert alert-danger">{{msg}}</div>
+    {% endif %}
+
+{% endwith %}
+

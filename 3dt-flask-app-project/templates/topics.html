@@ -1,0 +1,20 @@
+<!-- This Jinja2 template retrieves the layout from layout.html -->
+{% extends 'layout.html' %}
+
+<!-- This fills in the  'block body'  section of layout.html -->
+{% block body %}
+    <h1>All Topics added to viewed list</h1>
+    <p>these are all the topics you have added to the viewed topics you can view</p>
+    <table class="table table-hover">
+        <tr>
+            <th>Topic ID</th>
+            <th>Topic</th>
+            {% for entry in topics %}
+                <tr>
+                    <th>{{ entry.id }}</th>
+                    <th>{{ entry.topic }}</th>
+                </tr>
+            {% endfor %}
+        </tr>
+    </table>
+{% endblock %}

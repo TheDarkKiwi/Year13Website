@@ -1,0 +1,26 @@
+<!-- This Jinja2 template retrieves the layout from layout.html -->
+{% extends 'layout.html' %}
+
+<!-- This fills in the  'block body'  section of layout.html -->
+{% block body %}
+    <h1>Sensor Data</h1>
+    <!-- table for the sensor data related to a topic -->
+    <p>This is all data related to topic: {{ topic }}</p>
+    <div id='chart' class='chart'”></div>
+    <p>This is the 20 most recent sensor readings from the topic</p>
+    <p>To view another topics data go back to the Sensor Data tab and enter another topic</p>
+    <table class="table table-hover">
+        <tr>
+            <th>Average Temperature Celcius (<span>&#176;</span>C)</th>
+            <th>Date Collected (YYYY-MM-DD)</th>
+            <th>Time Collected (HH-MM-SS)</th>
+            {% for entry in sensorData %}
+                <tr>
+                    <th>{{ entry.temperature }} <span>&#176;</span>C</th>
+                    <th>{{ entry.currentdate }}</th>
+                    <th>{{ entry.currenttime }}</th>
+                </tr>
+            {% endfor %}
+        </tr>
+    </table>
+{% endblock %}

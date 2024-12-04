@@ -1,0 +1,16 @@
+<!-- This tells Jinja2 how to present the fields. -->
+<!-- It also handles the presentation of validation errors to the user.  -->
+{% macro render_field(field) %}
+    <!-- This is where the name of the field is presented. eg: Username -->
+    {{ field.label }}
+    <!-- I have no idea what this does. -->
+    {{ field(**kwargs)|safe }}
+    <!-- If there are any errors, show them to the user just under the field. -->
+    {% if field.errors %}
+        <!-- This iterates through the list of errors and shows them one by one. -->
+        {% for error in field.errors %}
+            <span class="help-inline text-danger">{{error}}</span>
+        {% endfor %}
+    {% endif %}
+{% endmacro %}
+<!-- Notice how we have to end every macro,conditional and loop? Jinja2 is like that. -->

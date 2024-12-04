@@ -1,0 +1,22 @@
+<!-- This Jinja2 template retrieves the layout from layout.html -->
+{% extends 'layout.html' %}
+
+<!-- This fills in the  'block body'  section of layout.html -->
+{% block body %}
+    <h1>Delete Topic</h1> 
+    <p>minimum of 4 characters and maximum of 50 characters for the topics name</p>
+    <!-- This pulls in the validation template and allows Flask-WTF fields to be rendered. -->
+    {% from "includes/_formhelpers.html" import render_field %}
+
+    <!-- This form with use the POST method and submit to itself. -->
+    <form method="POST" action="">
+        <!-- These present the different fields to the user. -->
+        <div class="form-group">
+            {{render_field(form.topic,class_="form-control")}}
+        </div>
+        <!-- We'll show a bit Submit button at the bottom. -->
+        <p><input type="submit" class="btn btn-primary" value="Submit"></p>
+
+    </form>
+    
+{% endblock %}

@@ -1,0 +1,42 @@
+.starter-template {
+    padding: 3rem 1.5rem;
+    text-align: center;
+}
+
+.navbar-custom  { 
+        background-color: rgb(18, 19, 18); 
+} 
+
+.navbar-custom .navbar-brand {
+    color: rgb(192, 192, 192);
+}
+
+.navbar-custom .nav-link {
+    color: rgb(192, 192, 192);
+    border-right: 1px solid gray;
+    border-bottom: 1px solid gray;
+    border-bottom-right-radius: 5px;
+    background-color: rgb(18, 19, 18); 
+}
+
+.navbar-custom .nav-link:hover {
+    color: rgb(192, 192, 192);
+    border-right: 1px solid rgb(255, 255, 255);
+    border-bottom: 1px solid rgb(255, 255, 255);
+    border-bottom-right-radius: 5px;
+    background-color: rgb(110, 110, 110);
+    color:rgb(18, 19, 18);
+}
+
+.margin-barrier {
+    margin-right: 5px;
+}
+
+.ul {
+    background-color: rgb(18, 19, 18);
+}
+
+table, tr, th {
+    border: 1px solid black;
+    border-collapse: collaspe;
+}

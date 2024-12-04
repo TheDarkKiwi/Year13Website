@@ -1,0 +1,11 @@
+<!-- This Jinja2 template retrieves the layout from layout.html -->
+{% extends 'layout.html' %}
+
+<!-- This fills in the  'block body'  section of layout.html -->
+{% block body %}
+    <!-- jumbotron is that big text thing in the middle of the page. -->
+    <div class="jumbotron text-center">
+        <h1>About Us</h1>
+        <p>(from inside a Jijna2 template about.html)</p>
+    </div>
+{% endblock %}

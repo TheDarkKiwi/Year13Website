@@ -1,0 +1,30 @@
+Git global setup
+git config --global user.name "Jack Edwards"
+git config --global user.email "jackdavidedwards03@gmail.com"
+
+Create a new repository
+git clone git@gitlab.com:jackdavidedwards03/3dt-flask-app-project.git
+cd 3dt-flask-app-project
+touch README.md
+git add README.md
+git commit -m "add README"
+git push -u origin master
+
+Push an existing folder
+cd existing_folder
+git init
+git remote add origin git@gitlab.com:jackdavidedwards03/3dt-flask-app-project.git
+git add .
+git commit -m "Initial commit"
+git push -u origin master
+
+Push an existing Git repository
+cd existing_repo
+git remote rename origin old-origin
+git remote add origin git@gitlab.com:jackdavidedwards03/3dt-flask-app-project.git
+git push -u origin --all
+git push -u origin --tags
+
+venv stuff
+python -m pip freeze > requirements.txt
+python -m pip install -r requirements.txt
